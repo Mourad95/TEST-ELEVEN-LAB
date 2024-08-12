@@ -24,7 +24,7 @@ export type GetPlanetListAPIResponse = Planet[];
 export function getPlanetListFromAPI<GetPlanetListAPIResponse>(
   options?: RequestInit,
 ): Promise<GetPlanetListAPIResponse> {
-  return fetchApi<GetPlanetListAPIResponse>("/planets", options);
+  return fetchApi<GetPlanetListAPIResponse>("/planets/allPlanets", options);
 }
 
 export async function getPlanetListByNameAPICall(
