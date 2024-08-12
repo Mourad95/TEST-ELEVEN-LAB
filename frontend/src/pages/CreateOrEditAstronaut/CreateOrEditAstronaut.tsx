@@ -51,9 +51,11 @@ export function CreateOrEditAstronaut() {
     mode === "create" ? handleAstronautFormCreate : handleAstronautFormEdit;
 
   const { currentPlanet } = useCurrentPlanet();
+  console.log("🚀 ~ CreateOrEditAstronaut ~ currentPlanet:", currentPlanet);
   const { isLoading, data } = useFetch<Astronaut>((options?: RequestInit) =>
     getOneAstronautFromAPI(astronautId, options),
   );
+  console.log("🚀 ~ CreateOrEditAstronaut ~ data:", data);
 
   return (
     <Flexbox flexDirection="column" className={styles.createoreditastronaut}>

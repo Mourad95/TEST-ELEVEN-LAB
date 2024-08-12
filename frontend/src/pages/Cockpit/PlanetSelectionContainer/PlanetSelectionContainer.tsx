@@ -41,7 +41,7 @@ export function PlanetSelectionContainer() {
   const {
     planetList: { isLoading, planetList, error },
   } = usePlanetList();
-  const { currentPlanet } = useCurrentPlanet();
+  const { currentPlanet , setCurrentPlanet} = useCurrentPlanet();
   const { selectedPlanetForSpaceTravel, setSelectedPlanetForSpaceTravel } =
     useSelectedPlanetForSpaceTravel();
   const { pushErrorMessage } = useMessageCenter();
@@ -57,6 +57,7 @@ export function PlanetSelectionContainer() {
     planetList?.forEach((planet: Planet) => {
       if (planet.id === selectedPlanet.id) {
         setSelectedPlanetForSpaceTravel(planet);
+        setCurrentPlanet(planet)
       }
     });
   };

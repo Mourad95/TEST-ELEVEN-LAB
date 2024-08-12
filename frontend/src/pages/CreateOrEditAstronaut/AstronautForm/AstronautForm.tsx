@@ -10,7 +10,10 @@ import { Form } from "../../../components/Form";
 import { HUDInput } from "../../../components/HUDInput";
 import { HUDButton } from "../../../components/HUDButton";
 import { Flexbox } from "../../../components/Flexbox";
-import { HUDAutoComplete } from "../../../components/HUDAutoComplete";
+import {
+  AutoCompleteOptionType,
+  HUDAutoComplete,
+} from "../../../components/HUDAutoComplete";
 
 // Context
 import { useCurrentPlanet } from "../../../contexts/SpaceTravelContext";
@@ -62,16 +65,10 @@ export function AstronautForm({
   const validateAndSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const validationErrors: FormStateType = {};
-    if (
-      typeof astronautFirstname !== "string" ||
-      astronautFirstname === ""
-    ) {
+    if (typeof astronautFirstname !== "string" || astronautFirstname === "") {
       validationErrors.firstname = "firstname is required";
     }
-    if (
-      typeof astronautLastname !== "string" ||
-      astronautLastname === ""
-    ) {
+    if (typeof astronautLastname !== "string" || astronautLastname === "") {
       validationErrors.lastname = "lastname is require";
     }
     if (
@@ -97,6 +94,7 @@ export function AstronautForm({
       setFormState(validationErrors);
     }
   };
+  console.log("🚀 ~ astronautForUpdate:", astronautForUpdate);
 
   const defaultSelectedPlanet = {
     value: astronautForUpdate?.originPlanet.id?.toString() || "",
@@ -133,6 +131,22 @@ export function AstronautForm({
             defaultValue={astronautForUpdate?.lastname || ""}
             error={formState.lastname}
             onChange={(e) => setAstronautLastname(e.target.value)}
+          />
+          <HUDAutoComplete
+            fetchOptions={function (): Promise<
+              AutoCompleteOptionType[] | undefined
+            > {
+              throw new Error("Function not implemented.");
+            }}
+            label={"autocomplete"}
+            defaultValue={{
+              label: astronautForUpdate?.originPlanet?.name
+              ? astronautForUpdate?.originPlanet?.name
+              : "",
+              value: astronautForUpdate?.originPlanet?.name
+                ? astronautForUpdate?.originPlanet?.name
+                : "",
+            }}
           />
           <Flexbox
             className={styles.astronautformButtons}

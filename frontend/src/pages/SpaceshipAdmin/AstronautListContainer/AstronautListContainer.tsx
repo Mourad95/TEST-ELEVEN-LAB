@@ -17,14 +17,21 @@ import { deleteAstronautAPICall } from "../../../api/astronaut.api";
 
 // Styles
 import styles from "./AstronautListContainer.module.css";
+import { useCurrentPlanet } from "../../../contexts/SpaceTravelContext";
+import { NoWhere, Planet } from "../../../api/planet.api";
 
-function mapAstronautList(astronautList?: Astronaut[] | null) {
-  if (!astronautList) {
+function mapAstronautList(
+  currentPlanet: Planet | NoWhere,
+  astronautList?: Astronaut[] | null,
+): AstronautForList[] {
+  if (!astronautList || currentPlanet === "NO_WHERE") {
     return [];
   }
-
-  return astronautList.map(
-    ({ id, firstname, lastname, originPlanet }: Astronaut) => ({
+  const astronautsFiltered = astronautList.filter(
+    ({ originPlanet }) => originPlanet?.id === currentPlanet.id,
+  );
+  return astronautsFiltered.map(
+    ({ id, firstname, lastname, originPlanet }) => ({
       id,
       firstname,
       lastname,
@@ -67,6 +74,8 @@ export function AstronautListContainer({
     }
   };
 
+  const { currentPlanet } = useCurrentPlanet();
+
   if (error) {
     pushErrorMessage("Eleven Labs space services are not online ...");
     throw error;
@@ -74,16 +83,18 @@ export function AstronautListContainer({
 
   return (
     <>
-      {!isLoading ? (
+      {isLoading ||
+      currentPlanet === "NO_WHERE" ||
+      mapAstronautList(currentPlanet, astronauts)?.length === 0 ? (
         <HUDWindowLoader
-          name="astronautlist-laoder"
+          name="astronautlist-loader"
           label="astronaut in the spaceship"
           className={styles.astronautlistcontainer}
         />
       ) : (
         <HUDAstronautList
           label="astronauts in the spaceship"
-          astronautList={mapAstronautList(astronauts)}
+          astronautList={mapAstronautList(currentPlanet, astronauts)}
           onEdit={({ id }: AstronautForList) =>
             handleNavigateToCreateOrEditAstronaut(id)
           }

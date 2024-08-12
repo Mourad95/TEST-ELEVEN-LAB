@@ -5,14 +5,15 @@ const AstronautController = {
   getAll: async (req: Request, res: Response): Promise<void> => {
     try {
       const astronauts = (await knex('astronauts')
-        .select('astronauts.*', 'planets.name as planetName', 'planets.description', 'planets.isHabitable', 'images.path', 'images.name as imageName')
+        .select('astronauts.*', 'planets.name as planetName', 'planets.description', 'planets.isHabitable', 'images.path', 'images.name as imageName','planets.id as originPlanetId')
         .join('planets', 'planets.id', '=', 'astronauts.originPlanetId')
         .join('images', 'images.id', '=', 'planets.imageId') 
-      ).map(({ id, firstname, lastname, planetName, isHabitable, description, path, imageName }) => ({
+      ).map(({ id, firstname, lastname, planetName, isHabitable, description, path, imageName, originPlanetId }) => ({
         id,
         firstname,
         lastname,
         originPlanet: {
+          id:originPlanetId,
           name: planetName,
           isHabitable,
           description,
