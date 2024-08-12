@@ -16,7 +16,7 @@ export type GetAstronautListAPIResponse = Astronaut[];
 export function getAstronautListFromAPI<GetAstronautListAPIResponse>(
   options?: RequestInit,
 ): Promise<GetAstronautListAPIResponse> {
-  return fetchApi<GetAstronautListAPIResponse>("/astronauts", options);
+  return fetchApi<GetAstronautListAPIResponse>("/astronauts/allAstronauts", options);
 }
 
 type DeleteAstronautAPIResponse = {
