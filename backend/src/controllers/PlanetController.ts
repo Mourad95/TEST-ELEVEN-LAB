@@ -6,18 +6,27 @@ const PlanetController = {
     try {
       const planets = (
         await knex("planets")
-          .select("*", "images.path", "images.name as imageName")
+          .select(
+            "planets.id",
+            "planets.name as planetName", // Utilisation d'un alias pour éviter la collision avec "images.name"
+            "planets.isHabitable",
+            "planets.description",
+            "images.path",
+            "images.name as imageName" // Alias pour "images.name"
+          )
           .join("images", "images.id", "=", "planets.imageId")
-      ).map(({ id, name, isHabitable, description, path, imageName }) => ({
-        id,
-        name,
-        isHabitable,
-        description,
-        image: {
-          path,
-          name: imageName,
-        },
-      }));
+      ).map(
+        ({ id, planetName, isHabitable, description, path, imageName }) => ({
+          id,
+          name: planetName, // Utilisation de l'alias correct
+          isHabitable,
+          description,
+          image: {
+            path,
+            name: imageName,
+          },
+        })
+      );
       res.status(200).json(planets);
     } catch (error) {
       res.status(500).json({ error: "Internal Server Error" });
