@@ -33,7 +33,9 @@ const AstronautController = {
   getById: async (req: Request, res: Response): Promise<void> => {
     const { id } = req.params;
     try {
-      const data = await knex('astronauts').select('astronauts.*', 'planets.*', 'images.path', 'images.name as imageName')
+      const data = await knex('astronauts').select('astronauts.*', 'planets.*', 'images.path', 'images.name as imageName','planets.id as originPlanetId')
+      .join('planets', 'planets.id', '=', 'astronauts.originPlanetId')
+      .join('images', 'images.id', '=', 'planets.imageId') 
       .where('astronauts.id', id).first();
       if (data) {
         res.status(200).json({
@@ -41,6 +43,7 @@ const AstronautController = {
           firstname: data.firstname,
           lastname: data.lastname,
           originPlanet: {
+            id:data.originPlanetId,
             name: data.name,
             isHabitable: data.isHabitable,
             description: data.description,
