@@ -1,0 +1,34 @@
+.cockpit {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+}
+
+.cockpitSpace {
+  position: absolute;
+  z-index: -1;
+}
+
+.cockpitHyperspaceButtonContainer {
+  margin: 30px;
+}
+
+.cockpitSpaceshipAdminButtonContainer {
+  margin: 30px;
+}
+
+.cockpitSpaceshipAdminButton:hover svg {
+  fill: var(--cockpit-black-color);
+}
+
+.cockpitSpaceshipAdminButtonIcon {
+  fill: var(--cockpit-hud-main-color);
+  margin-right: 5px;
+}
+
+.cockpitElevenLabsLogo {
+  padding: 20px;
+  color: var(--cockpit-hud-main-color);
+  font-size: 2.3em;
+}

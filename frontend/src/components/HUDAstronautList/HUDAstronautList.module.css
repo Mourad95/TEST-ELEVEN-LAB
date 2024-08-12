@@ -1,0 +1,45 @@
+.astronautlist {
+  text-align: left;
+}
+
+.astronautlistWindow {
+  text-align: center;
+}
+
+.astronautlistHeader > div,
+.astronautlistContent > div {
+  width: 33%;
+  flex-grow: 1;
+}
+
+.astronautlistHeader {
+  padding: 10px;
+  font-size: 1.3em;
+}
+
+.astronautlistContent {
+  padding: 10px;
+}
+
+.astronautlistActions > svg {
+  fill: var(--cockpit-hud-dark-color);
+  margin-right: 5px;
+}
+
+.astronautlistActions > svg:hover {
+  fill: var(--cockpit-hud-main-color);
+  cursor: pointer;
+}
+
+.astronautlistLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.astronautlistEmptyState {
+  min-height: 250px;
+  text-align: center;
+  font-size: 1.3em;
+  padding: 20px;
+}

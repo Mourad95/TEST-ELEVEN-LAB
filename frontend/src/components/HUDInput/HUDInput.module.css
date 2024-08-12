@@ -1,0 +1,102 @@
+.hudinput {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+/* input rules */
+.hudinputHtmlInput {
+  border: 0;
+  border-bottom: 1px solid var(--cockpit-hud-alpha-color-8);
+  color: var(--cockpit-hud-main-color);
+  display: block;
+  font-size: var(--cockpit-hud-input-font-size);
+  height: 30px;
+  vertical-align: middle;
+  width: 100%;
+  background: none;
+}
+
+.hudinputHtmlInput::placeholder {
+  opacity: 0;
+  color: var(--cockpit-hud-alpha-color-5);
+}
+
+.hudinputHtmlInput:focus,
+.hudinputHtmlInput:valid {
+  outline: 0;
+}
+
+.hudinputHtmlInput:focus::placeholder,
+.hudinputHtmlInput:valid::placeholder {
+  opacity: 1;
+}
+
+.hudinputHtmlInputError {
+  border-bottom: 1px solid var(--cockpit-hud-error-alpha-color-8);
+  color: var(--cockpit-hud-error-main-color);
+}
+
+.hudinputHtmlInputError::placeholder {
+  color: var(--cockpit-hud-error-alpha-color-5);
+}
+
+/* label rules */
+.hudinputLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  font-weight: bold;
+  position: absolute;
+  pointer-events: none;
+  top: 8px;
+  transition: all 0.25s ease-out;
+}
+
+.hudinputHtmlInput:focus ~ .hudinputLabel,
+.hudinputHtmlInput:valid ~ .hudinputLabel {
+  top: -20px;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  color: var(--cockpit-hud-dark-color);
+}
+
+.hudinputLabelError {
+  color: var(--cockpit-hud-error-main-color);
+}
+
+.hudinputHtmlInput:focus ~ .hudinputLabelError,
+.hudinputHtmlInput:valid ~ .hudinputLabelError {
+  top: -20px;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  color: var(--cockpit-hud-error-dark-color);
+}
+
+/* bar rules */
+.hudinputBar {
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  display: block;
+  background: var(--cockpit-hud-dark-color);
+  top: -1px;
+  z-index: 1;
+  transition: all 0.25s ease-out;
+}
+
+.hudinputHtmlInput:focus ~ .hudinputBar,
+.hudinputHtmlInput:valid ~ .hudinputBar {
+  width: 100%;
+}
+
+.hudinputBarError {
+  background: var(--cockpit-hud-error-dark-color);
+}
+
+/* error rules */
+.hudinputError {
+  color: var(--cockpit-hud-error-main-color);
+  font-size: 1rem;
+}

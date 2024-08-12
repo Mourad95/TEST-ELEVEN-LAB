@@ -1,0 +1,18 @@
+.spaceshipadmin {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cockpit-black-color);
+  padding: 30px;
+}
+
+.spaceshipadminReturnButton:hover svg {
+  fill: var(--cockpit-black-color);
+}
+
+.spaceshipadminPlanetDescription h3 {
+  font-size: var(--cockpit-md-font-size);
+}
+
+.spaceshipadminBody {
+  padding: 30px;
+}

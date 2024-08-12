@@ -1,0 +1,23 @@
+.hudlistitem {
+  color: var(--cockpit-hud-main-color);
+  list-style-type: none;
+}
+
+.hudlistitemBordered {
+  border-bottom: 1px solid var(--cockpit-hud-dark-color);
+}
+
+.hudlistitemClickable {
+  transition: all 200ms ease-in-out;
+}
+
+.hudlistitemClickable:hover {
+  cursor: pointer;
+  background-color: var(--cockpit-hud-dark-color);
+  color: var(--cockpit-black-color);
+}
+
+.hudlistitemActive {
+  background-color: var(--cockpit-hud-dark-color);
+  color: var(--cockpit-black-color);
+}

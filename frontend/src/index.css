@@ -1,0 +1,44 @@
+@import "./modern-normalize.css";
+
+@import url(https://fonts.googleapis.com/css?family=Rajdhani:300);
+
+:root {
+  /* CSS Variables */
+
+  /* Text */
+  --cockpit-md-font-size: 1.125rem;
+  --cockpit-xl-font-size: 2rem;
+  --cockpit-hud-input-font-size: 1.125rem;
+  --cockpit-hud-input-label-font-size: 0.75rem;
+
+  /* Colors */
+  --cockpit-hud-alpha-color-1: rgba(0, 190, 190, 0.1);
+  --cockpit-hud-alpha-color-5: rgba(0, 190, 190, 0.5);
+  --cockpit-hud-alpha-color-8: rgba(0, 190, 190, 0.8);
+  --cockpit-hud-main-color: #00dcdc;
+  --cockpit-hud-dark-color: #00bebe;
+  --cockpit-hud-error-alpha-color-1: rgba(246, 105, 94, 0.1);
+  --cockpit-hud-error-alpha-color-5: rgba(246, 105, 94, 0.5);
+  --cockpit-hud-error-alpha-color-8: rgba(246, 105, 94, 0.8);
+  --cockpit-hud-error-main-color: #e7766d;
+  --cockpit-hud-error-dark-color: #f44336;
+  --cockpit-hud-warning-alpha-color-1: rgba(255, 152, 0, 0.1);
+  --cockpit-hud-warning-main-color: #ff9800;
+  --cockpit-hud-warning-dark-color: #cc7900;
+  --cockpit-black-color: #212121;
+
+  font-family: "Rajdhani", Inter, system-ui, Avenir, Helvetica, Arial,
+    sans-serif;
+  font-size: var(--cockpit-md-font-size);
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  color: white;
+}

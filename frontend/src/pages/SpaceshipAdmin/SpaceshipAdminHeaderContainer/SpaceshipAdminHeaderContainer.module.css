@@ -1,0 +1,22 @@
+.spaceshipadminheaderReturnButton {
+  margin-right: auto;
+}
+
+.spaceshipadminheaderReturnButtonIcon {
+  width: 30px;
+  height: 30px;
+  margin-left: 5px;
+  fill: var(--cockpit-hud-main-color);
+}
+
+.spaceshipadminheaderPlanetDescription {
+  margin-right: auto;
+}
+
+.spaceshipadminheaderPlanetWarning {
+  margin-right: auto;
+}
+
+.spaceshipadminheaderPlanetWarning div {
+  min-height: 100px;
+}

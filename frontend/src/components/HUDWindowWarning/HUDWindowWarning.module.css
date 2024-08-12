@@ -1,0 +1,13 @@
+.hudwindowwarningLabel {
+  color: var(--cockpit-hud-warning-main-color);
+  text-transform: uppercase;
+}
+
+.hudwindowwarningWindow {
+  min-height: 300px;
+  padding: 30px;
+  border-color: var(--cockpit-hud-warning-dark-color);
+  background: var(--cockpit-hud-error-alpha-color-1);
+  color: var(--cockpit-hud-error-main-color);
+  font-size: 1.4em;
+}

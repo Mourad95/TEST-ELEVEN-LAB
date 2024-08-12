@@ -1,0 +1,10 @@
+.hudwindow {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enable=false);
+  opacity: 1;
+  border: 1px solid var(--cockpit-hud-dark-color);
+  color: var(--cockpit-hud-main-color);
+  letter-spacing: 0.1em;
+  text-indent: 1em;
+  z-index: 1;
+  background-color: var(--cockpit-hud-alpha-color-1);
+}

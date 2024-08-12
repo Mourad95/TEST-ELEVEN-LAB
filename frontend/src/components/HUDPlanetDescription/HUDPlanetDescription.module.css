@@ -1,0 +1,40 @@
+.planetdescriptionImage {
+  min-width: 400px;
+  max-width: 1000px;
+  margin-right: 50px;
+}
+
+.planetdescriptionWindow {
+  align-self: center;
+}
+
+.planetdescriptionName {
+  font-size: 2em;
+  margin: 0;
+  padding: 20px;
+}
+
+.planetdescriptionDescription {
+  padding: 20px;
+  padding-top: 0;
+  font-size: 1.4em;
+  margin-bottom: auto;
+}
+
+.planetdescriptionStatus {
+  border-top: 1px solid var(--cockpit-hud-main-color);
+  padding: 20px;
+  margin-top: auto;
+}
+
+.planetdescriptionIcon {
+  width: 30px;
+  height: 30px;
+  fill: var(--cockpit-hud-main-color);
+}
+
+.planetdescriptionLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  text-align: left;
+}

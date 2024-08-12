@@ -1,0 +1,102 @@
+.hudtextarea {
+  display: block;
+  width: 100%;
+  position: relative;
+  text-align: left;
+}
+
+/* textarea rules */
+.hudtextareaHtmlTextarea {
+  border: 0;
+  border-bottom: 1px solid var(--cockpit-hud-alpha-color-8);
+  color: var(--cockpit-hud-main-color);
+  display: block;
+  font-size: var(--cockpit-hud-input-font-size);
+  min-height: 60px;
+  vertical-align: middle;
+  width: 100%;
+  background: none;
+}
+
+.hudtextareaHtmlTextarea::placeholder {
+  opacity: 0;
+  color: var(--cockpit-hud-alpha-color-5);
+}
+
+.hudtextareaHtmlTextarea:focus,
+.hudtextareaHtmlTextarea:valid {
+  outline: 0;
+}
+
+.hudtextareaHtmlTextarea:focus::placeholder,
+.hudtextareaHtmlTextarea:valid::placeholder {
+  opacity: 1;
+}
+
+.hudtextareaHtmlTextareaError {
+  border-bottom: 1px solid var(--cockpit-hud-error-alpha-color-8);
+  color: var(--cockpit-hud-error-main-color);
+}
+
+.hudtextareaHtmlTextareaError::placeholder {
+  color: var(--cockpit-hud-error-alpha-color-5);
+}
+
+/* label rules */
+.hudtextareaLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  font-weight: bold;
+  position: absolute;
+  pointer-events: none;
+  top: 8px;
+  transition: all 0.25s ease-out;
+}
+
+.hudtextareaHtmlTextarea:focus ~ .hudtextareaLabel,
+.hudtextareaHtmlTextarea:valid ~ .hudtextareaLabel {
+  top: -20px;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  color: var(--cockpit-hud-dark-color);
+}
+
+.hudtextareaLabelError {
+  color: var(--cockpit-hud-error-main-color);
+}
+
+.hudtextareaHtmlTextarea:focus ~ .hudtextareaLabelError,
+.hudtextareaHtmlTextarea:valid ~ .hudtextareaLabelError {
+  top: -20px;
+  font-size: var(--cockpit-hud-input-label-font-size);
+  color: var(--cockpit-hud-error-dark-color);
+}
+
+/* bar rules */
+.hudtextareaBar {
+  transform: translateX(-50%);
+  position: relative;
+  left: 50%;
+  height: 2px;
+  width: 0;
+  display: block;
+  background: var(--cockpit-hud-dark-color);
+  top: -1px;
+  z-index: 1;
+  transition: all 0.25s ease-out;
+}
+
+.hudtextareaHtmlTextarea:focus ~ .hudtextareaBar,
+.hudtextareaHtmlTextarea:valid ~ .hudtextareaBar {
+  width: 100%;
+}
+
+.hudtextareaBarError {
+  background: var(--cockpit-hud-error-dark-color);
+}
+
+/* error rules */
+.hudtextareaError {
+  color: var(--cockpit-hud-error-main-color);
+  font-size: 1rem;
+}

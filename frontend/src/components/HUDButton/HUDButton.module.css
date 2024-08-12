@@ -1,0 +1,67 @@
+@keyframes loading {
+  0% {
+    background-color: var(--cockpit-hud-alpha-color-1);
+    color: var(--cockpit-hud-main-color);
+  }
+  50 % {
+    background-color: var(--cockpit-hud-main-color);
+    color: var(--cockpit-black-color);
+  }
+  100% {
+    background-color: var(--cockpit-hud-dark-color);
+    color: var(--cockpit-black-color);
+  }
+}
+
+.hudbutton {
+  border: 1px solid var(--cockpit-hud-dark-color);
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--cockpit-hud-alpha-color-1);
+  cursor: pointer;
+  transition: all 200ms ease-in-out;
+  color: var(--cockpit-hud-main-color);
+  appearance: none;
+}
+
+.hudbutton-md {
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+}
+
+.hudbutton-xl {
+  padding: 1em 1.6em;
+  font-size: 1.4em;
+}
+
+.hudbutton:hover {
+  background-color: var(--cockpit-hud-dark-color);
+  color: var(--cockpit-black-color);
+}
+
+.hudbutton:focus,
+.hudbutton:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+.hudbutton:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-style: dashed;
+}
+
+.hudbutton:disabled.hudbutton:hover {
+  background-color: var(--cockpit-hud-alpha-color-1);
+  color: var(--cockpit-hud-main-color);
+}
+
+.hudbuttonLoading {
+  animation-name: loading;
+  animation-duration: 1500ms;
+  animation-iteration-count: infinite;
+}
+
+.hudbuttonActive {
+  background-color: var(--cockpit-hud-dark-color);
+  color: var(--cockpit-black-color);
+}

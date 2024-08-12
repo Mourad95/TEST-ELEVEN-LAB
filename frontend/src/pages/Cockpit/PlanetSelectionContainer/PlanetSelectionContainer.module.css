@@ -1,0 +1,8 @@
+.planetselectioncontainer {
+  width: 20%;
+  margin: 30px;
+}
+
+.planetselectioncontainerLoader div {
+  height: 280px;
+}

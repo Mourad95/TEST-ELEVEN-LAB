@@ -1,0 +1,39 @@
+.planetlistItem {
+  padding: 10px;
+  font-size: 1.6em;
+  position: relative;
+}
+
+.planetlistItem:hover .planetlistIcon,
+.planetlistItemActive > svg {
+  fill: var(--cockpit-black-color);
+}
+
+.planetlistIcon {
+  fill: var(--cockpit-hud-main-color);
+  width: 30px;
+  height: 30px;
+}
+
+.planetlistCurrentPlanet {
+  color: var(--cockpit-hud-dark-color);
+  margin-left: auto;
+}
+
+.planetlistItem:hover .planetlistCurrentPlanet,
+.planetlistItemActive > * {
+  color: var(--cockpit-black-color);
+}
+
+.planetlistLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.planetlistEmptyState {
+  min-height: 280px;
+  font-size: 1.6em;
+  text-align: center;
+  padding: 20px;
+}

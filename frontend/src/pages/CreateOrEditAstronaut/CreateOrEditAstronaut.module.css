@@ -1,0 +1,24 @@
+.createoreditastronaut {
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--cockpit-black-color);
+  padding: 30px;
+  text-align: center;
+}
+
+.createoreditastronautCurrentPlanet {
+  margin-bottom: 30px;
+}
+
+.createoreditastronautForm {
+  min-width: 790px;
+}
+
+.createoreditastronautCurrentPlanetWarning {
+  align-self: center;
+  margin-bottom: 30px;
+}
+
+.createoreditastronautCurrentPlanetWarning div {
+  min-height: 100px;
+}

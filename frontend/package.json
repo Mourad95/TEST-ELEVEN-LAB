@@ -1,0 +1,48 @@
+{
+  "name": "wilson-cockpit",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0 && prettier . --check && tsc",
+    "format": "eslint --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix && prettier . --write",
+    "preview": "vite preview",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage"
+  },
+  "dependencies": {
+    "classnames": "2.3.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-error-boundary": "^4.0.12",
+    "react-router-dom": "6.18.0"
+  },
+  "devDependencies": {
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "@typescript-eslint/eslint-plugin": "5.13.0",
+    "@typescript-eslint/parser": "5.0.0",
+    "@vitejs/plugin-react": "4.0.3",
+    "eslint": "8.2.0",
+    "eslint-config-airbnb-base": "15.0.0",
+    "eslint-config-airbnb-typescript": "17.1.0",
+    "eslint-config-prettier": "9.0.0",
+    "eslint-plugin-import": "2.25.2",
+    "eslint-plugin-prettier": "5.0.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.3",
+    "happy-dom": "^12.10.3",
+    "msw": "2.0.5",
+    "prettier": "3.0.3",
+    "typescript": "5.2.2",
+    "vite": "4.4.5",
+    "vite-plugin-pwa": "0.16.7",
+    "vite-plugin-svgr": "^4.1.0",
+    "vitest": "0.34.6"
+  },
+  "msw": {
+    "workerDirectory": "public"
+  }
+}

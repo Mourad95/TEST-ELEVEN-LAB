@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  front-eleven-test:
+    image: node:18.18.0
+    volumes:
+      - ./:/code/
+    working_dir: /code/
+    networks:
+      - public
+    ports:
+      - "3000:3000"
+    command: ["sh", "-c", "yarn install && yarn dev"]
+
+networks:
+  public:

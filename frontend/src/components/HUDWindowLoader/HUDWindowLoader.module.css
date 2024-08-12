@@ -1,0 +1,27 @@
+.hudwindowloaderLabel {
+  color: var(--cockpit-hud-main-color);
+  text-transform: uppercase;
+  text-align: left;
+}
+
+.hudwindowloaderWindow {
+  padding: 20px;
+  padding-bottom: 0;
+}
+
+@keyframes loader {
+  0% {
+    background: var(--cockpit-hud-alpha-color-5);
+  }
+  100% {
+    background: var(--cockpit-hud-aplpha-color-8);
+  }
+}
+
+.hudwindowloaderRow {
+  height: 12px;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  animation: loader 2s infinite alternate;
+}

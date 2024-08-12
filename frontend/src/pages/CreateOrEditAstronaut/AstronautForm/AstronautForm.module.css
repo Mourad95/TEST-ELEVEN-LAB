@@ -1,0 +1,29 @@
+.astronautform {
+  text-align: center;
+}
+
+.astronautformForm {
+  padding: 20px;
+}
+
+.astronautformForm div {
+  margin-bottom: 40px;
+}
+
+.astronautformButtons {
+  margin-bottom: 0 !important;
+}
+
+.astronautformButtons button {
+  margin-right: 10px;
+}
+
+.astronautformCannotCreate {
+  padding: 20px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.astronautformCannotCreate h2 {
+  color: var(--cockpit-hud-warning-main-color);
+}
