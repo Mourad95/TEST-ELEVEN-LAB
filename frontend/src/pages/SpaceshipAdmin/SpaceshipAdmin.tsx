@@ -26,11 +26,12 @@ import { useAstronautList } from "../../contexts/SpaceshipContext";
 
 // Styles
 import styles from "./SpaceshipAdmin.module.css";
+import { CreateOrEditAstronaut } from "../CreateOrEditAstronaut";
 
 export function SpaceshipAdmin() {
   const navigate = useNavigate();
-
   const handleNavigateToCockpit = () => navigate("/");
+
   const handleNavigateToCreateOrEditAstronaut = (astronautId?: number) =>
     astronautId
       ? navigate(`/astronaut/edit/${astronautId}`)

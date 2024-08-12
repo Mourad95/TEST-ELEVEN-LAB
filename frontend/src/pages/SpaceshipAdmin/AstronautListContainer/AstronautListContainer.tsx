@@ -83,7 +83,9 @@ export function AstronautListContainer({
 
   return (
     <>
-      {isLoading || currentPlanet === "NO_WHERE" || mapAstronautList(currentPlanet, astronauts)?.length === 0 ? (
+      {isLoading ||
+      currentPlanet === "NO_WHERE" ||
+      mapAstronautList(currentPlanet, astronauts)?.length === 0 ? (
         <HUDWindowLoader
           name="astronautlist-loader"
           label="astronaut in the spaceship"
