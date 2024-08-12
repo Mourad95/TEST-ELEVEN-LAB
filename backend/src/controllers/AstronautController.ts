@@ -4,13 +4,16 @@ import knex from '../db';
 const AstronautController = {
   getAll: async (req: Request, res: Response): Promise<void> => {
     try {
-      const astronauts = (await knex('astronauts').select('astronauts.*', 'planets.name', 'planets.description', 'planets.isHabitable', 'images.path', 'images.name as imageName'))
-      .map(({ id, firstname, lastname, name, isHabitable, description, path, imageName }) => ({
+      const astronauts = (await knex('astronauts')
+        .select('astronauts.*', 'planets.name as planetName', 'planets.description', 'planets.isHabitable', 'images.path', 'images.name as imageName')
+        .join('planets', 'planets.id', '=', 'astronauts.originPlanetId')
+        .join('images', 'images.id', '=', 'planets.imageId') 
+      ).map(({ id, firstname, lastname, planetName, isHabitable, description, path, imageName }) => ({
         id,
         firstname,
         lastname,
         originPlanet: {
-          name,
+          name: planetName,
           isHabitable,
           description,
           image: {
@@ -21,6 +24,7 @@ const AstronautController = {
       }));
       res.status(200).json(astronauts);
     } catch (error) {
+      console.log("🚀 ~ getAll: ~ error:", error);
       res.status(500).json({ error: 'Internal Server Error' });
     }
   },
