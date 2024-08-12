@@ -30,6 +30,7 @@ export function HUDPlanetDescription({
   name,
   style,
 }: PlanetDescriptionProps) {
+  console.log("🚀 ~ imgSrc:", imgSrc)
   return (
     <div className={className} style={style}>
       {label && (
