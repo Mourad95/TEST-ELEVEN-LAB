@@ -12,7 +12,6 @@ import styles from "./CurrentPlanetContainer.module.css";
 
 export function CurrentPlanetContainer() {
   const { currentPlanet } = useCurrentPlanet();
-  console.log("🚀 ~ CurrentPlanetContainer ~ currentPlanet:", currentPlanet)
   const { isTraveling } = useIsTraveling();
 
   if (currentPlanet === "NO_WHERE" || isTraveling) {

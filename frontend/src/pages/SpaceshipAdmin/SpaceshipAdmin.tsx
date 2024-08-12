@@ -58,7 +58,6 @@ export function SpaceshipAdmin() {
       <Flexbox justifyContent="center" alignItems="center">
         <AstronautListErrorBoundary>
           <AstronautListContainer
-             
             handleNavigateToCreateOrEditAstronaut={
               handleNavigateToCreateOrEditAstronaut
             }
