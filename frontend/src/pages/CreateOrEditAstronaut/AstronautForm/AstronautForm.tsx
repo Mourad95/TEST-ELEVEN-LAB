@@ -27,6 +27,10 @@ import { getPlanetListByNameAPICall } from "../../../api/planet.api";
 
 // Styles
 import styles from "./AstronautForm.module.css";
+import {
+  AstronautForList,
+  HUDAstronautList,
+} from "../../../components/HUDAstronautList";
 
 type AstronautFormProps = {
   astronautForUpdate?: Astronaut | null;
@@ -132,6 +136,7 @@ export function AstronautForm({
             error={formState.lastname}
             onChange={(e) => setAstronautLastname(e.target.value)}
           />
+
           <HUDAutoComplete
             fetchOptions={function (): Promise<
               AutoCompleteOptionType[] | undefined
@@ -139,14 +144,7 @@ export function AstronautForm({
               throw new Error("Function not implemented.");
             }}
             label={"autocomplete"}
-            defaultValue={{
-              label: astronautForUpdate?.originPlanet?.name
-              ? astronautForUpdate?.originPlanet?.name
-              : "",
-              value: astronautForUpdate?.originPlanet?.name
-                ? astronautForUpdate?.originPlanet?.name
-                : "",
-            }}
+            defaultValue={defaultSelectedPlanet}
           />
           <Flexbox
             className={styles.astronautformButtons}
